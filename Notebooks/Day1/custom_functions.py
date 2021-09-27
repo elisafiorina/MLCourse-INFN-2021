@@ -2,6 +2,8 @@
 # coding: utf-8
 
 from pyspark.ml.feature import VectorAssembler
+from pyspark import SparkConf
+
 import numpy as np
 import matplotlib.pyplot as plt 
 
@@ -222,3 +224,43 @@ def printMetrics(evaluator, prediction):
     print('n F1 score: %0.3f' % F)
     
     return
+
+def setupSpark(token):
+    
+    import requests
+    import xmltodict
+
+    r = requests.post("https://minio.cloud.infn.it",
+                  data={
+                      'Action':
+                      "AssumeRoleWithWebIdentity",
+                      'Version': "2011-06-15",
+                      'WebIdentityToken': token,
+                      'DurationSeconds': 9000
+                  },
+                  verify=True)
+
+    tree = xmltodict.parse(r.content)
+
+    credentials = dict(tree['AssumeRoleWithWebIdentityResponse']
+                    ['AssumeRoleWithWebIdentityResult']['Credentials'])
+    
+    conf = (SparkConf()
+         .setMaster("k8s://https://kubernetes:443")
+         .setAppName("MyApp")
+         .set("spark.executor.memory", "1g")
+         .set("spark.executor.instances", "2")
+         .set("spark.kubernetes.container.image", "dodasts/spark:v3.0.1")
+         # configure S3 access  
+         .set("spark.hadoop.fs.s3a.endpoint", "https://minio.cloud.infn.it")
+         .set("spark.hadoop.fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.TemporaryAWSCredentialsProvider")
+         .set("spark.hadoop.fs.s3a.access.key", credentials["AccessKeyId"])
+         .set("spark.hadoop.fs.s3a.secret.key", credentials["SecretAccessKey"]) 
+         .set("spark.hadoop.fs.s3a.session.token", credentials["SessionToken"])
+         .set("spark.hadoop.fs.s3a.path.style.access","true")
+         .set("spark.hadoop.fs.s3a.fast.upload", "true")
+         .set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+         .set("spark.hadoop.fs.s3a.committer.name", "directory")
+       )
+    
+    return conf
