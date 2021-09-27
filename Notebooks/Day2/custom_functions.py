@@ -250,7 +250,11 @@ def setupSpark(token):
          .setAppName("MyApp")
          .set("spark.kubernetes.container.image", "dodasts/spark:v3.0.1")
          .set("spark.executor.memory", "1g")
-         .set("spark.executor.instances", "2")        
+         .set("spark.executor.instances", "4")
+#         .set("spark.executor.instances", "2")
+#         .set("spark.driver.memory", "1g")
+#         .set("spark.executor.memory", "1g")
+#         .set("spark.executor.cores", "2")               
          # configure S3 access  
          .set("spark.hadoop.fs.s3a.endpoint", "https://minio.cloud.infn.it")
          .set("spark.hadoop.fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.TemporaryAWSCredentialsProvider")
