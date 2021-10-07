@@ -8,12 +8,6 @@
 
 - Basic knowledge of python 
 
-## Before the course starts
-
-- We will be using python, in particular I advise you to get familiar with Jupyter notebooks, numpy and pandas before the course starts. No expert knowledge is required, but doing a couple of tutorials on these topics (easily found on the web) is highly recommended.
-- Try to login and get familiar with the INFN cloud, see this [guide](https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html)
-
-
 ## Practicalities
 
 - The course will take place remotely due to COVID restrictions. 
@@ -23,14 +17,37 @@
 
 ## Hands-on session
 
-- point your browser to https://my.cloud.infn.it/
-- you will need to authenticate through your INFN IAM account (please read [this](#before-the-course-starts) first)
+- please read [this](#before-the-course-starts) first
+- point your browser to the link we provided you. It looks something like https://jhub.some.ip.address.myip.cloud.infn.it/
 - on the first day, open a terminal and clone this repository:
 
 ```
 git clone https://github.com/leggerf/MLCourse-INFN-2021.git
 ```
 - The Jupyter notebook documentation can be found [here](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html) 
+
+## Before the course starts
+
+- We will be using python, in particular I advise you to get familiar with Jupyter notebooks, numpy and pandas before the course starts. No expert knowledge is required, but doing a couple of tutorials on these topics (easily found on the web) is highly recommended.
+- The hands-on will be done on the INFN cloud. Please follow the instructions below and let us know if you have issues.
+ 
+### Access to INFN Cloud
+
+- if you are already an INFN cloud user, let us know. We need to add you to the resource group for this course
+- if you never used INFN cloud, you need to register: 
+   - Please follow these [steps](https://guides.cloud.infn.it/docs/users-guides/en/latest/users_guides/getting_started.html#registration-in-the-infn-cloud-iam).
+   - in the notes, specify that you're asking for access to participate in the Big Data and ML course
+
+### Access to JupyterHub
+
+-  You will receive by email a link to your Jhub. The url looks something like https://jhub.some.ip.address.myip.cloud.infn.it/
+   -  Click on the link, and accept any security exceptions you might get
+   - you will need to authenticate with IAM
+   - you will get to a page that says “Authentication required for …”, click on “Authorize”
+   - When you get to the server creation page, chooose the option: “Large - 4CPU 8GB”
+   - It might take a few minutes for the server to start
+   - in case you get timeout errors, and server creation fails, simply reload the link and try againL
+
 
 ## Schedule
 
