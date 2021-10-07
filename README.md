@@ -1,6 +1,7 @@
 # MLCourse-INFN-2021
 
-Material for the INFN Course 'Big Data and ML' - October 11-15 2021
+- Material for the INFN Course 'Big Data and ML' - October 11-15 2021
+- Course schedule [here](#schedule)
 
 ## Pre-requisites
 
@@ -29,3 +30,41 @@ Material for the INFN Course 'Big Data and ML' - October 11-15 2021
 git clone https://github.com/leggerf/MLCourse-INFN-2021.git
 ```
 - The Jupyter notebook documentation can be found [here](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html) 
+
+## Schedule
+
+**Lunedi 11 ottobre**
+
+10:00 - 11:00        Introduction to big data science  (Legger)
+11:00 - 12:00        Feature extraction (Monaco)
+
+14:00 - 15:00        Smart workflows and distributed computing beyond the grid paradigm (Vallero)
+15:00 - 16:00        Esercitazioni (Legger, Vallero, Antonacci, Valentini)
+
+**Martedi 12 ottobre**
+
+10:00 - 11:00         Introduction to Machine Learning: Supervised models (Legger)
+11:00 - 12:00         Introduction to Machine Learning: Unsupervised models (Monaco)
+
+14:00 - 15:00         Distributed data beyond the grid paradigm (Vallero)
+15:00 - 16:00         Esercitazioni (Legger, Vallero, Antonacci, Valentini)
+
+**Mercoledi 13 ottobre**
+
+10:00 - 12:00         Introduction to Deep Learning and neural networks (Legger)
+
+14:00 - 15:00         Distributed infrastructures beyond the grid paradigm (Vallero)
+15:00 - 16:00         Esercitazioni (Legger, Vallero, Antonacci, Valentini)
+
+**Giovedi 12 ottobre**
+
+10:00 - 12:00         Deep Learning architectures: CNN, Autoencoders, RNN (Diacono)
+14:00 - 16:00         Esercitazioni (Diacono, Legger, Vallero)
+
+**Venerdi 15 ottobre**
+
+10:00 - 11:00         Introduction to INFN Cloud (Donvito)
+11:00 - 12:00         Introduction to INFN Cloud services (Antonacci)
+
+14:00 - 16:00         Discussione degli esercizi e lightning talks (Legger, Vallero,  Antonacci, Valentini)
+
